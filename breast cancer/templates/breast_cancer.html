@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>breast cancer detection </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/bootstrap.css')}}">
+
+	<style type="text/css">
+		#cl{border: 10px;border-radius: 50px;border-style:ridge;}
+		.container{background-color:cadetblue;}
+		.sh{background-color:navy;color:white;}
+		body{background-color:cadetblue;}
+		.bt{border:3px solid;height:55px;border-radius: 20px;border-style:outset;font-weight: bold;font-size:27px;}
+
+	</style>
+
+</head>
+<body>
+	<div class="container">
+		<form method="post" action="predict">
+		<div class="row">
+			<div class="col sh" id="cl">
+				<h1 style="font-weight: bold; font-size: 50px;text-align: center;"> Breast Cancer Detection Model</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col mt-4 ">
+				<div class="form-inline">
+					<div class="form-group">
+						<input type="" name="a" class="form-control" placeholder="mean radius">
+					</div>
+			   </div> 
+			</div>
+
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						<input type="" name="b" class="form-control" placeholder="mean texture">
+					</div>
+			   </div> 
+			</div>
+
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						<input type="" name="c" class="form-control" placeholder="mean perimeter">
+					</div>
+			   </div> 
+			</div>
+
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						<input type="" name="d" class="form-control" placeholder="mean area">
+					</div>
+			   </div> 
+			</div>
+
+			<div class="col mt-4 ">
+				<div class="form-inline">
+					<div class="form-group">
+						<input type="" name="e" class="form-control" placeholder="mean smoothness">
+					</div>
+			   </div> 
+			</div>
+
+		</div>
+
+		<div class="row">
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						<input type="" name="f" class="form-control" placeholder="mean compactness">
+					</div>
+			   </div> 
+			</div>
+			
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						<input type="" name="g" class="form-control" placeholder="mean concavity">
+					</div>
+			   </div> 
+			</div>
+
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						<input type="" name="h" class="form-control" placeholder="mean concave points">
+					</div>
+			   </div> 
+			</div>
+
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						<input type="" name="i" class="form-control" placeholder="mean symmetry">
+					</div>
+			   </div> 
+			</div>
+
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						<input type="" name="j" class="form-control" placeholder="mean fractal dimension">
+					</div>
+			   </div> 
+			</div>
+
+
+		</div>
+
+		<div class="row">
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						
+						<input type="" name="k" class="form-control" placeholder="radius error">
+					</div>
+			   </div> 
+			</div>
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						<input type="" name="l" class="form-control" placeholder="texture error">
+					</div>
+			   </div> 
+			</div>
+			
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						
+						<input type="" name="m" class="form-control" placeholder="perimeter error">
+					</div>
+			   </div> 
+			</div>
+
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						
+						<input type="" name="n" class="form-control" placeholder="area error">
+					</div>
+			   </div> 
+			</div>
+
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						<input type="" name="o" class="form-control" placeholder="smoothness error">
+					</div>
+			   </div> 
+			</div>
+		</div>
+
+	<div class="row">
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						<input type="" name="p" class="form-control" placeholder="compactness error">
+					</div>
+			   </div> 
+			</div>
+
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						
+						<input type="" name="q" class="form-control" placeholder="concavity error">
+					</div>
+			   </div> 
+			</div>
+
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						
+						<input type="" name="r" class="form-control" placeholder="concave points error">
+					</div>
+			   </div> 
+			</div>
+
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						
+						<input type="" name="s" class="form-control" placeholder="symmetry error">
+					</div>
+			   </div> 
+			</div>
+
+			
+
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						
+						<input type="" name="t" class="form-control" placeholder="fractal dimension error">
+					</div>
+			   </div> 
+			</div>
+			
+		</div>
+		<div class="row">
+
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						
+						<input type="" name="u" class="form-control" placeholder="worst radius">
+			
+					</div>
+			   </div> 
+			</div>
+
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						
+						<input type="" name="v" class="form-control" placeholder="worst texture">
+					</div>
+			   </div> 
+			</div>
+
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						
+						<input type="" name="w" class="form-control" placeholder="worst perimeter">
+					</div>
+			   </div> 
+			</div>
+
+			
+
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						
+						<input type="" name="x" class="form-control" placeholder="worst area">
+					</div>
+			   </div> 
+			</div>
+
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						
+						<input type="" name="y" class="form-control" placeholder="worst smoothness">
+					</div>
+			   </div> 
+			</div>
+			
+		</div>
+
+		<div class="row">
+
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						
+						<input type="" name="z" class="form-control" placeholder="worst compactness">
+					</div>
+			   </div> 
+			</div>
+
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						
+						<input type="" name="aa" class="form-control" placeholder="worst concavity">
+					</div>
+			   </div> 
+			</div>
+
+			
+
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						
+						<input type="" name="bb" class="form-control" placeholder="worst concave points">
+					</div>
+			   </div> 
+			</div>
+
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						
+						<input type="" name="cc" class="form-control" placeholder="worst symmetry">
+					</div>
+			   </div> 
+			</div>
+
+			<div class="col mt-4">
+				<div class="form-inline">
+					<div class="form-group">
+						
+						<input type="" name="dd" class="form-control" placeholder="worst fractal dimension">
+					</div>
+			   </div> 
+			</div>
+			
+		</div>
+
+	<div class="row">
+		<div class="col-7 offset-2 pl-5 mt-5">
+					<div class="form-group">
+						<button type="" class="form-control btn btn-success bt">Predict </button>
+					</div>
+
+			</div>
+		
+	</div>
+
+	<div class="row">
+		<div class="col mt-2 offset-1">
+					<div class="form-group">
+						<textarea class="form-control" readonly style="width:850px;height:70px;font-size:26px;font-weight: bold; text-align: center;border:3px;border-radius: 10px;">{{value}}</textarea>
+					</div>
+			   </div> 
+			</div>
+		
+	</div>
+
+</form>
+
+	</div>
+
+</body>
+</html>
